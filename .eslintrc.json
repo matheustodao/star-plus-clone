@@ -15,10 +15,10 @@
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
-  "plugins": ["react", "prettier"],
+  "plugins": ["react"],
   "rules": {
-    "react/react-in-jsx-scope": "off",
     "prettier/prettier": "error",
+    "react/react-in-jsx-scope": "off",
     "import/prefer-default-export": "off"
   }
 }
