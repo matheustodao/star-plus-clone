@@ -1,5 +1,8 @@
 {
   "./src/*.{tsx,ts}": [
     "eslint --fix"
+  ],
+  ".svg": [
+    "yarn svgo"
   ]
 }
