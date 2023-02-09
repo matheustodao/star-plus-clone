@@ -2,7 +2,7 @@
   "./src/*.{tsx,ts}": [
     "eslint --fix"
   ],
-  ".svg": [
+  "*.svg": [
     "yarn svgo"
   ]
 }
