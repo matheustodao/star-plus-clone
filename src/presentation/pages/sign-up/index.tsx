@@ -1,4 +1,5 @@
 import { SignUpContainer as Container } from '@components/Sign-Up/Container';
+import { HeaderFormSignUp } from '@components/Sign-Up/form/Header';
 import { Checkbox } from '@shared/Form/Checkbox';
 import { ErrorMessage } from '@shared/Form/ErrorMessage';
 import { Input } from '@shared/Form/Input';
@@ -6,22 +7,14 @@ import { Input } from '@shared/Form/Input';
 export function SignUpPage() {
   const isEmailInvalid = false;
   return (
-    <Container>
+    <Container className="h-[100vh]">
       <div className="mx-auto max-w-[374px]">
-        <div className="mb-1">
-          <small className="pb-[10px] text-gray-300 text-[10px] tracking-[0.1rem]">
-            STEP 1 OF 4
-          </small>
-
-          <h3 className="pb-8 tracking-[0.11px] text-2xl font-semibold">
-            Enter your email
-          </h3>
-
-          <p className="pb-5 text-gray-300 text-sm leading-6">
-            Already have a Disney+ account? Use the same email for easy login
-            and payment.
-          </p>
-        </div>
+        <HeaderFormSignUp
+          currentStep={1}
+          title="Enter your email"
+          subtitle="Already have a Disney+ account? Use the same email for easy login and
+          payment."
+        />
 
         <fieldset className="pb-5">
           <legend className="hidden">email</legend>
