@@ -1,13 +1,16 @@
 import { Navigate } from 'react-router';
-import { PublicLayout } from './components/Public';
+import { LayoutPublic } from './components/Public';
+import { LayoutSignUpPublic } from './components/Public/SignUp';
 
 const layouts = {
-  public: <PublicLayout />,
+  'public/default': <LayoutPublic />,
+  'public/sign-up': <LayoutSignUpPublic />,
 };
 
 interface LayoutRootPublic {
   isPrivate: false;
   roles?: undefined;
+  layout?: keyof typeof layouts;
 }
 
 interface LayoutRooPrivate {
@@ -21,13 +24,13 @@ type LayoutRootProps = LayoutRooPrivate | LayoutRootPublic;
 
 export function LayoutRoot(props: LayoutRootProps) {
   const role = 'user';
-  const { isPrivate, roles } = props;
+  const { isPrivate, roles, layout } = props;
 
   if (!isPrivate && !roles) {
-    return layouts.public;
+    return layouts[layout ?? 'public/default'];
   }
 
-  const { layout, fallback } = props;
+  const { fallback } = props;
 
   if (!roles.includes(role)) {
     return <Navigate to={fallback || '/'} replace />;
@@ -39,4 +42,5 @@ export function LayoutRoot(props: LayoutRootProps) {
 LayoutRoot.defaultProps = {
   isPrivate: false,
   roles: undefined,
+  layout: 'public/default',
 };
