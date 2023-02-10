@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 
 export function Footer() {
   return (
-    <div className="flex flex-row items-center justify-center pb-8 text-gray-300">
-      <small className="text-sm">
+    <div className="flex flex-col items-center justify-center pb-8 text-gray-300">
+      <small className="text-sm flex flex-col items-center">
         Developed by{' '}
         <Link
           to="https://linkedin.com/in/matheustodao"
@@ -13,12 +13,13 @@ export function Footer() {
         >
           @matheustodao
         </Link>
+        <span className="text-xs p-2">For education purpose</span>
       </small>
 
-      <span className="w-1 h-1 rounded-full bg-gray-300 mx-5" />
+      <span className="w-1 h-1 rounded-full bg-gray-300 my-5" />
 
       <small>
-        Official website{' '}
+        Official Platform{' '}
         <Link
           to="https://starplus.com"
           target="_blank"
