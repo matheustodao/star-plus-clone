@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-bg-default text-gray-50;
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+  }
+}
+
+.btn--primary {
+  background: linear-gradient(82deg,#e1054a 19%,#ce4100);
+  @apply text-gray-50 px-6 py-3 rounded font-medium tracking-wide;
+  @apply transition-all ease-in-out delay-200;
+
+  &:active {
+    background: linear-gradient(84deg,#960331,#993000);
+  }
+
+  &:hover {
+    @apply brightness-105;
+  }
+
+  &--inline-flex {
+    @apply flex items-center justify-center;
+  }
+}
+
