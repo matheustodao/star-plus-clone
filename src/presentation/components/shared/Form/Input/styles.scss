@@ -1,0 +1,10 @@
+.input {
+  @apply bg-gray-50/10 rounded py-2 px-3 border-[1px] border-transparent backdrop-blur-[50px] h-[54px];
+  @apply placeholder:text-sm;
+  @apply outline-none;
+  @apply focus:border-bg-gray-50/30;
+
+  &[aria-invalid="true"] {
+    @apply border-red-500;
+  }
+}
