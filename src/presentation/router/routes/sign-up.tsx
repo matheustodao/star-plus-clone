@@ -1,17 +1,23 @@
-import { LayoutRoot } from '@presentation/components/layout';
+import { LayoutRoot } from '@presentation/components/shared/Layout';
 import { SignUpPage } from '@presentation/pages/sign-up';
 import { SignUpPasswordPage } from '@presentation/pages/sign-up/subpages/PasswordPage';
 import { RouteObject } from 'react-router-dom';
 
-export const SignUpRouting: RouteObject = {
+export const RoutingSignUpIndex: RouteObject = {
   path: '/sign-up',
-  element: <LayoutRoot layout="public" roles="admin" />,
+  element: <LayoutRoot layout="public/sign-up" />,
   children: [
     {
       index: true,
       element: <SignUpPage />,
     },
+  ],
+};
 
+export const RoutingSignUp: RouteObject = {
+  path: '/sign-up',
+  element: <LayoutRoot />,
+  children: [
     {
       path: 'password',
       element: <SignUpPasswordPage />,

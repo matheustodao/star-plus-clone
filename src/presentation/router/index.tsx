@@ -1,9 +1,13 @@
 import { RouterProvider } from 'react-router';
 import { createBrowserRouter } from 'react-router-dom';
-import { LoginRouting } from './routes/login';
-import { SignUpRouting } from './routes/sign-up';
+import { RoutingLogin } from './routes/login';
+import { RoutingSignUp, RoutingSignUpIndex } from './routes/sign-up';
 
-const routes = createBrowserRouter([LoginRouting, SignUpRouting]);
+const routes = createBrowserRouter([
+  RoutingLogin,
+  RoutingSignUp,
+  RoutingSignUpIndex,
+]);
 
 export function Routes() {
   return <RouterProvider router={routes} />;
